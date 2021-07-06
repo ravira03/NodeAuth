@@ -24,7 +24,7 @@ const UserSchema = new mongoose.Schema({
         select: false
     },
 
-    resetPasswordToke: String,
+    resetPasswordToken: String,
     resetPasswordExpire: Date
 });
 
@@ -47,6 +47,7 @@ UserSchema.methods.getSignedToken = function(){
         expiresIn: process.env.JWT_EXPIRE,
     });
 };
+
 
 const User = mongoose.model("User", UserSchema);
 
